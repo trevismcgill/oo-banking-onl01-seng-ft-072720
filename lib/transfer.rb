@@ -14,12 +14,15 @@ def valid?
 end
 
 def execute_transaction
-1.times do
-@sender.balance -= @amount
-@receiver.balance += @amount
-@amount = 0
-end
-@status = "complete"
+  if @amount > @sender.balance
+    "Transaction rejected. Please check your account balance"
+  else
+    @sender.balance -= @amount
+    @receiver.balance += @amount
+    @amount = 0
+  end
+  @status = "complete"
+
 end
 
 def reverse_transfer
