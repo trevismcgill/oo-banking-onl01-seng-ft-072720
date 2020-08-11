@@ -8,4 +8,5 @@ def initialize
 @status = "pending"
 @trasnfer_amount = transfer_amount
 end
+
 end
