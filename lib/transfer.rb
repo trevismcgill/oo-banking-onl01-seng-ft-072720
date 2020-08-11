@@ -17,6 +17,7 @@ def execute_transaction
 1.times do
 @sender.balance -= @amount
 @receiver.balance += @amount
+@amount = 0
 end
 @status = "complete"
 end
