@@ -20,19 +20,17 @@ def execute_transaction
   else
     @sender.balance -= @amount
     @receiver.balance += @amount
-    # @amount = 0
+    @amount = 0
     @status = "complete"
   end
-
-
 end
 
 def reverse_transfer
   if @status == "complete"
-  @receiver.balance -= @amount
-  @sender.balance += @amount
-  @amount = 0
-end
+    @receiver.balance -= @amount
+    @sender.balance += @amount
+    @amount = 0
+  end
 end
 
 end
