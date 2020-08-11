@@ -20,7 +20,7 @@ def execute_transaction
   else
     @sender.balance -= @amount
     @receiver.balance += @amount
-    @amount = 0
+    # @amount = 0
     @status = "complete"
   end
 
