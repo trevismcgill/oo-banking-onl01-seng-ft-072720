@@ -15,8 +15,8 @@ end
 
 def execute_transaction
   if @amount > @sender.balance || @sender.status == "closed" || @receiver.status == "closed"
-    puts "Transaction rejected. Please check your account balance."
      @status = "rejected"
+     "Transaction rejected. Please check your account balance."
   else
     @sender.balance -= @amount
     @receiver.balance += @amount
