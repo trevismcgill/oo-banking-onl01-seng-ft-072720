@@ -17,10 +17,9 @@ def execute_transaction
   if @amount > @sender.balance || @sender.status == "closed" || @receiver.status == "closed"
      @status = "rejected"
      "Transaction rejected. Please check your account balance."
-  else
+  elsif @status != "complete"
     @sender.balance -= @amount
     @receiver.balance += @amount
-    @amount = 0
     @status = "complete"
   end
 end
@@ -29,7 +28,6 @@ def reverse_transfer
   if @status == "complete"
     @receiver.balance -= @amount
     @sender.balance += @amount
-    @amount = 0
   end
   @status = "reversed"
 end
