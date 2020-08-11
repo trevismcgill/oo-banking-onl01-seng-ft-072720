@@ -22,7 +22,7 @@ def execute_transaction
     @amount = 0
     @status = "complete"
   end
-  
+
 
 end
 
