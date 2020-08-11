@@ -14,7 +14,7 @@ def valid?
 end
 
 def execute_transaction
-  1.times do
+1.times do
 @sender.balance -= @amount
 @receiver.balance += @amount
 end
